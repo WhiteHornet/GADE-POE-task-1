@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Map.cs" />
+    <Compile Include="Assets\Scripts\Tile.cs" />
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>D:/GoogleDrive/2018/GADE6211/battleship2018/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
