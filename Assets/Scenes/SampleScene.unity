@@ -249,13 +249,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282840810}
-  m_LocalRotation: {x: 0.21245474, y: -0, z: -0, w: 0.97717094}
-  m_LocalPosition: {x: 10.46, y: 5.84, z: -9.11}
+  m_LocalRotation: {x: 0.5410534, y: -0, z: -0, w: 0.8409883}
+  m_LocalPosition: {x: 10.46, y: 17.3, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 24.532001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 65.511, y: 0, z: 0}
 --- !u!1 &369081037
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,8 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e635040448df54bbb4a7602830efeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oceanTile: {fileID: 1163456060061076, guid: 4c832eab71fc9b04e8fd6f85adca7929, type: 2}
-  hitTile: {fileID: 1647720797389312, guid: 0c2f2b40676c682489319c3ec6d24cb9, type: 2}
+  oceanTile: {fileID: 1994020189065912, guid: 4e470a85c7751ac44ae183a9e7220576, type: 2}
+  hitTile: {fileID: 1796997049665110, guid: 2bfa724d8c757a049af01f3b1f774919, type: 2}
   missTile: {fileID: 1453794197939938, guid: 421b8aa477380d34998bb86c3bcb205a, type: 2}
   size: 20
 --- !u!4 &369081039

@@ -53,7 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DisplayMap.cs" />
      <Compile Include="Assets\Scripts\Map.cs" />
+     <Compile Include="Assets\Scripts\OceanSelect.cs" />
      <Compile Include="Assets\Scripts\Tile.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/gd/2018/GADE6112/projects/battleship2018/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

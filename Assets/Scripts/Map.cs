@@ -1,68 +1,61 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class Map : MonoBehaviour {
+public class Map {
 
-    public GameObject oceanTile;
-    public GameObject hitTile;
-    public GameObject missTile;
-    public int size;
-    private Tile[,] map;
-
-	// Use this for initialization
-	void Start () {
-
-        CreateMap();
-        DisplayMap();
-		
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
-
-    void CreateMap()
+    private Tile[,] tileMap;
+    private int size;
+    private Random r;
+    public Tile[,] TileMap
     {
-        map = new Tile[size, size];
+        get { return tileMap;}
+        set { tileMap = value;}
+    }
+
+    public Map (int size)
+    {
+        r = new Random();
+        size = size;
+        tileMap = new Tile[size, size];
+
+        //Create an empty ocean
         for (int x = 0; x < size; x++)
         {
             for (int z = 0; z < size; z++)
             {
                 Tile t = new Tile();
-                if (Random.Range(0, 100) > 80)
+                t.TileType = TileType.OceanEmpty;
+                tileMap[x, z] = t;
+            }
+        } 
+
+        //Create and place the ships
+        for(int i = 0; i < 5; i++)
+        {
+            int buffer = i + 1;
+            int x = r.Next(buffer,size - buffer);
+            int y = r.Next(buffer,size - buffer);
+            int d = r.Next(0,100);
+            if(d >= 50) //vertical
+            { 
+                for(int j = 0; j <= i; j++)
                 {
-                    t.TileType = TileType.Hit;
+                    tileMap[x, y + j].TileType = TileType.OceanShip;
+                    tileMap[x, y + j].Orientation = Orientation.Vertical;
+
                 }
-                else
+            }
+            else //horiztional
+            {
+                for(int j = 0; j <= i; j++)
                 {
-                    t.TileType = TileType.Ocean;
+                    tileMap[x + j, y].TileType = TileType.OceanShip;
+                    tileMap[x, y + j].Orientation = Orientation.Horizational;
                 }
-                map[x, z] = t;
+
             }
         }
     }
 
-    void DisplayMap()
-    {
-        for (int x = 0; x < size; x++)
-        {
-            for (int z = 0; z < size; z++)
-            {
-                switch (map[x, z].TileType)
-                {
-                    case TileType.Ocean:
-                        Instantiate(oceanTile, new Vector3(x, 0, z), Quaternion.identity);
-                        break;
-                    case TileType.Hit:
-                        Instantiate(hitTile, new Vector3(x, 0, z), Quaternion.identity);
-                        break;
-                    case TileType.Miss:
-                        Instantiate(missTile, new Vector3(x, 0, z), Quaternion.identity);
-                        break;
-                }
-            }
-        }
-    }
 }
